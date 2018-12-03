@@ -165,3 +165,114 @@ npm WARN forum-db@1.0.0 No repository field.
 + express@4.16.4
 added 49 packages from 36 contributors and audited 1123 packages in 5.797s
 found 0 vulnerabilities
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => heroku create community-forum-tugberk-db
+Creating ⬢ community-forum-tugberk-db... done
+https://community-forum-tugberk-db.herokuapp.com/ | https://git.heroku.com/community-forum-tugberk-db.git
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => heroku addons:create heroku-postgresql
+Creating heroku-postgresql on ⬢ community-forum-tugberk-db... free
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pg:copy
+Created postgresql-animated-67063 as DATABASE_URL
+Use heroku addons:docs heroku-postgresql to view documentation
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => gss
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   knexfile.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => gaa
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => git commit -m ":rocket: Add production connection for deploy"
+[master f1cd864] :rocket: Add production connection for deploy
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 355 bytes | 355.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/tugberkgoc/community-forum-db.git
+   38b8b33..f1cd864  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => git push heroku master
+Counting objects: 25, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (25/25), 20.01 KiB | 4.00 MiB/s, done.
+Total 25 (delta 8), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Node.js app detected
+remote:        
+remote: -----> Creating runtime environment
+remote:        
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:        NODE_VERBOSE=false
+remote:        
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:        
+remote:        Resolving node version 10.x...
+remote:        Downloading and installing node 10.14.1...
+remote:        Using default npm version: 6.4.1
+remote:        
+remote: -----> Building dependencies
+remote:        Installing node modules (package.json + package-lock)
+remote:        added 234 packages from 166 contributors and audited 1123 packages in 7.478s
+remote:        found 0 vulnerabilities
+remote:        
+remote:        
+remote: -----> Caching build
+remote:        - node_modules
+remote:        
+remote: -----> Pruning devDependencies
+remote:        audited 1123 packages in 2.335s
+remote:        found 0 vulnerabilities
+remote:        
+remote:        
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote: 
+remote: -----> Compressing...
+remote:        Done: 20.5M
+remote: -----> Launching...
+remote:        Released v5
+remote:        https://community-forum-tugberk-db.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/community-forum-tugberk-db.git
+ * [new branch]      master -> master
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => heroku open
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => heroku logs --tail
+2018-12-03T16:16:27.915066+00:00 app[api]: Initial release by user tugberkgoc@gmail.com
+
