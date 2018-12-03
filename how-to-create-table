@@ -1,0 +1,49 @@
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => pwd
+/Users/tugberkgoc/Desktop/git/forum-db
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => knex migrate:make user
+Using environment: development
+Created Migration: /Users/tugberkgoc/Desktop/git/forum-db/migrations/20181203104258_user.js
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => // After coding user table
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc)
+| => knex migrate:latest
+Using environment: development
+Batch 1 run: 1 migrations
+/Users/tugberkgoc/Desktop/git/forum-db/migrations/20181203104258_user.js
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc)
+| => psql community-forum
+psql (10.6)
+Type "help" for help.
+
+community-forum=# \d
+                        List of relations
+ Schema |              Name              |   Type   |   Owner
+--------+--------------------------------+----------+------------
+ public | knex_migrations                | table    | tugberkgoc
+ public | knex_migrations_id_seq         | sequence | tugberkgoc
+ public | knex_migrations_lock           | table    | tugberkgoc
+ public | knex_migrations_lock_index_seq | sequence | tugberkgoc
+ public | users                          | table    | tugberkgoc
+ public | users_id_seq                   | sequence | tugberkgoc
+(6 rows)
+
+community-forum=# \d users
+                               Table "public.users"
+    Column    |  Type   | Collation | Nullable |              Default
+--------------+---------+-----------+----------+-----------------------------------
+ id           | integer |           | not null | nextval('users_id_seq'::regclass)
+ display_name | text    |           | not null |
+ email        | text    |           | not null |
+ google_id    | text    |           | not null |
+ banned       | boolean |           | not null | false
+Indexes:
+    "users_pkey" PRIMARY KEY, btree (id)
+
+community-forum=#

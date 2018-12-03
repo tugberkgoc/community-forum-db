@@ -1,0 +1,12 @@
+
+npm init -y
+
+npm install knex pg
+
+createdb community-forum
+
+brew services start postgres
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => knex init
+Created ./knexfile.js
