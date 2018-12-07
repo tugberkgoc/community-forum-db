@@ -275,4 +275,50 @@ ________________________________________________________________________________
 | ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
 | => heroku logs --tail
 2018-12-03T16:16:27.915066+00:00 app[api]: Initial release by user tugberkgoc@gmail.com
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => heroku run knex migrate:latest
+Running knex migrate:latest on ⬢ community-forum-tugberk-db... up, run.4567 (Free)
+Using environment: production
+Batch 1 run: 3 migrations 
+/app/migrations/20181203104258_user.js
+/app/migrations/20181203121450_role.js
+/app/migrations/20181203121755_add_role_id_to_user.js
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => heroku run knex seed:run
+Running knex seed:run on ⬢ community-forum-tugberk-db... up, run.4538 (Free)
+Using environment: production
+Ran 1 seed files 
+/app/seeds/01-roles.js
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => heroku pg:psql
+--> Connecting to postgresql-animated-67063
+psql (10.6)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
 
+community-forum-tugberk-db::DATABASE=> \d
+                          List of relations
+ Schema |              Name              |   Type   |     Owner      
+--------+--------------------------------+----------+----------------
+ public | knex_migrations                | table    | egkowrqzobeltz
+ public | knex_migrations_id_seq         | sequence | egkowrqzobeltz
+ public | knex_migrations_lock           | table    | egkowrqzobeltz
+ public | knex_migrations_lock_index_seq | sequence | egkowrqzobeltz
+ public | role                           | table    | egkowrqzobeltz
+ public | role_id_seq                    | sequence | egkowrqzobeltz
+ public | users                          | table    | egkowrqzobeltz
+ public | users_id_seq                   | sequence | egkowrqzobeltz
+(8 rows)
+
+community-forum-tugberk-db::DATABASE=> table role;
+ id |     name      
+----+---------------
+  1 | user
+  2 | moderator
+  3 | administrator
+(3 rows)
+
+community-forum-tugberk-db::DATABASE=> \q

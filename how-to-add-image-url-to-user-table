@@ -1,0 +1,11 @@
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => knex migrate:make add_image_url_to_users
+Using environment: development
+Created Migration: /Users/tugberkgoc/Desktop/git/forum-db/migrations/20181204045559_add_image_url_to_users.js
+________________________________________________________________________________
+| ~/Desktop/git/forum-db @ tugberks-mbp (tugberkgoc) 
+| => knex migrate:latest
+Using environment: development
+Batch 3 run: 1 migrations 
+/Users/tugberkgoc/Desktop/git/forum-db/migrations/20181204045559_add_image_url_to_users.js
