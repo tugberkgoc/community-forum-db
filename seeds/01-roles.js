@@ -1,4 +1,3 @@
-
 exports.seed = async function (knex, Promise) {
   // Deletes ALL existing entries
   await knex('role').del();
